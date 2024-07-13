@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/posts_nav"
+    app:startDestination="@id/postsFragment">
+
+    <fragment
+        android:id="@+id/postsFragment"
+        android:name="com.ibrahim.task.presentation.posts.PostsFragment"
+        tools:layout="@layout/fragment_posts">
+
+        <action
+            android:id="@+id/action_postsFragment_to_postFragment"
+            app:destination="@id/PostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/PostFragment"
+        android:name="com.ibrahim.task.presentation.post.PostFragment"
+        tools:layout="@layout/fragment_post">
+        <argument
+            android:name="post"
+            app:argType="com.ibrahim.task.data.model.Post"
+            app:nullable="true" />
+        <argument
+            android:name="action"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_postFragment_to_postsFragment"
+            app:destination="@id/postsFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/PostsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
