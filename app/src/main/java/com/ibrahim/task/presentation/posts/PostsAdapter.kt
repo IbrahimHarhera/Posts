@@ -48,7 +48,7 @@ class PostsAdapter(
 
         fun bind(post: Post) {
             binding.apply {
-                tvUserID.text = post.realId.toString()
+                tvUserID.text = post.realId.toString().plus(" - ")
                 tvTitle.text = post.title
                 tvBody.text = post.body
             }

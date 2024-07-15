@@ -3,7 +3,7 @@
 import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
 
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.plugin)
     alias(libs.plugins.kapt)
     alias(libs.plugins.hilt)
@@ -12,25 +12,6 @@ plugins {
 android {
     namespace = "com.ibrahim.network"
     compileSdk = 34
-    defaultConfig {
-        applicationId = "com.ibrahim.task"
-
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
-        multiDexEnabled = true
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
-        buildFeatures {
-            buildConfig = true
-        }
-    }
-
-    buildFeatures {
-        buildConfig = true
-    }
 
     buildTypes {
         release {
@@ -42,11 +23,16 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 

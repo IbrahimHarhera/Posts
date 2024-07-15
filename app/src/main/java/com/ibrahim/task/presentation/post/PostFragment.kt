@@ -10,7 +10,6 @@ import androidx.navigation.fragment.navArgs
 import com.ibrahim.task.R
 import com.ibrahim.task.data.model.Post
 import com.ibrahim.task.databinding.FragmentPostBinding
-import com.ibrahim.task.presentation.posts.PostsFragmentDirections.ActionPostsFragmentToPostFragment
 import com.ibrahim.task.presentation.utils.PostStatus
 import com.ibrahim.task.presentation.utils.UPDATE
 import com.ibrahim.ui.base.BaseFragment

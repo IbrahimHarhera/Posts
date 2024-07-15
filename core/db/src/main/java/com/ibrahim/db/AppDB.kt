@@ -6,5 +6,5 @@ import com.ibrahim.db.entity.Post
 
 @Database(entities = [Post::class], version = 1)
 abstract class AppDB :RoomDatabase(){
-    abstract fun PostDao():PostDao
+    abstract fun postDao():PostDao
 }
